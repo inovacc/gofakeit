@@ -13,4 +13,3 @@ jobs:
       run-tests: true
       run-lint: true
       run-vulncheck: true
-      run-gofmt: true
