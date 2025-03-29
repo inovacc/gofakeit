@@ -1,7 +1,8 @@
 # Gofakeit Command Line Tool
 
 Run gofakeit via that command line.
-All functions are available to run in lowercase and if they require additional parameters you may pass by space seperation.
+All functions are available to run in lowercase and if they require additional parameters you may pass by space
+seperation.
 
 ### Installation
 

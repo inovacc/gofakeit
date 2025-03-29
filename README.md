@@ -41,17 +41,17 @@ go get github.com/brianvoe/gofakeit/v7
 ```go
 import "github.com/brianvoe/gofakeit/v7"
 
-gofakeit.Name()             // Markus Moen
-gofakeit.Email()            // alaynawuckert@kozey.biz
-gofakeit.Phone()            // (570)245-7485
-gofakeit.BS()               // front-end
-gofakeit.BeerName()         // Duvel
-gofakeit.Color()            // MediumOrchid
+gofakeit.Name() // Markus Moen
+gofakeit.Email() // alaynawuckert@kozey.biz
+gofakeit.Phone() // (570)245-7485
+gofakeit.BS() // front-end
+gofakeit.BeerName() // Duvel
+gofakeit.Color()    // MediumOrchid
 gofakeit.Company()          // Moen, Pagac and Wuckert
 gofakeit.CreditCardNumber() // 4287271570245748
-gofakeit.HackerPhrase()     // Connecting the array won't do anything, we need to generate the haptic COM driver!
-gofakeit.JobTitle()         // Director
-gofakeit.CurrencyShort()    // USD
+gofakeit.HackerPhrase() // Connecting the array won't do anything, we need to generate the haptic COM driver!
+gofakeit.JobTitle()      // Director
+gofakeit.CurrencyShort() // USD
 ```
 
 [See full list of functions](#functions)
@@ -76,15 +76,17 @@ gofakeit.Seed(8675309) // Set it to whatever number you want
 
 ## Random Sources
 
-Gofakeit has a few rand sources, by default it uses math/rand/v2 PCG which is a pseudo random number generator and is thread locked.
+Gofakeit has a few rand sources, by default it uses math/rand/v2 PCG which is a pseudo random number generator and is
+thread locked.
 
-If you want to see other potential sources you can see the sub package [Source](https://github.com/brianvoe/gofakeit/tree/master/source) for more information.
+If you want to see other potential sources you can see the sub
+package [Source](https://github.com/brianvoe/gofakeit/tree/master/source) for more information.
 
 ```go
 import (
-	"github.com/brianvoe/gofakeit/v7"
-	"github.com/brianvoe/gofakeit/v7/source"
-	"math/rand/v2"
+"github.com/brianvoe/gofakeit/v7"
+"github.com/brianvoe/gofakeit/v7/source"
+"math/rand/v2"
 )
 
 // Uses math/rand/v2(PCG Pseudo) with mutex locking
@@ -98,7 +100,6 @@ faker := gofakeit.NewFaker(rand.NewPCG(11, 11), true)
 
 // ChaCha8
 faker := gofakeit.NewFaker(rand.NewChaCha8([32]byte{0, 1, 2, 3, 4, 5}), true)
-
 
 // Additional from Gofakeit sub package source
 
@@ -138,46 +139,46 @@ import "github.com/brianvoe/gofakeit/v7"
 
 // Create structs with random injected data
 type Foo struct {
-	Str           string
-	Int           int
-	Pointer       *int
-	Name          string         `fake:"{firstname}"`         // Any available function all lowercase
-	Sentence      string         `fake:"{sentence:3}"`        // Can call with parameters
-	RandStr       string         `fake:"{randomstring:[hello,world]}"`
-	Number        string         `fake:"{number:1,10}"`       // Comma separated for multiple values
-	Regex         string         `fake:"{regex:[abcdef]{5}}"` // Generate string from regex
-	Map           map[string]int `fakesize:"2"`
-	Array         []string       `fakesize:"2"`
-	ArrayRange    []string       `fakesize:"2,6"`
-	Bar           Bar
-	Skip          *string        `fake:"skip"`                // Set to "skip" to not generate data for
-	SkipAlt       *string        `fake:"-"`                   // Set to "-" to not generate data for
-	Created       time.Time                                   // Can take in a fake tag as well as a format tag
-	CreatedFormat time.Time      `fake:"{year}-{month}-{day}" format:"2006-01-02"`
+Str           string
+Int           int
+Pointer       *int
+Name          string         `fake:"{firstname}"`  // Any available function all lowercase
+Sentence      string         `fake:"{sentence:3}"` // Can call with parameters
+RandStr       string         `fake:"{randomstring:[hello,world]}"`
+Number        string         `fake:"{number:1,10}"`       // Comma separated for multiple values
+Regex         string         `fake:"{regex:[abcdef]{5}}"` // Generate string from regex
+Map           map[string]int `fakesize:"2"`
+Array         []string       `fakesize:"2"`
+ArrayRange    []string       `fakesize:"2,6"`
+Bar           Bar
+Skip          *string        `fake:"skip"` // Set to "skip" to not generate data for
+SkipAlt       *string        `fake:"-"` // Set to "-" to not generate data for
+Created       time.Time                 // Can take in a fake tag as well as a format tag
+CreatedFormat time.Time      `fake:"{year}-{month}-{day}" format:"2006-01-02"`
 }
 
 type Bar struct {
-	Name    string
-	Number  int
-	Float   float32
+Name    string
+Number  int
+Float   float32
 }
 
 // Pass your struct as a pointer
 var f Foo
 err := gofakeit.Struct(&f)
 
-fmt.Println(f.Str)      		// hrukpttuezptneuvunh
-fmt.Println(f.Int)      		// -7825289004089916589
-fmt.Println(*f.Pointer) 		// -343806609094473732
-fmt.Println(f.Name)     		// fred
-fmt.Println(f.Sentence) 		// Record river mind.
-fmt.Println(fStr)  				// world
-fmt.Println(f.Number)   		// 4
-fmt.Println(f.Regex)    		// cbdfc
-fmt.Println(f.Map)    			// map[PxLIo:52 lxwnqhqc:846]
-fmt.Println(f.Array)    		// cbdfc
-fmt.Printf("%+v", f.Bar)    	// {Name:QFpZ Number:-2882647639396178786 Float:1.7636692e+37}
-fmt.Println(f.Skip)     		// <nil>
+fmt.Println(f.Str) // hrukpttuezptneuvunh
+fmt.Println(f.Int) // -7825289004089916589
+fmt.Println(*f.Pointer) // -343806609094473732
+fmt.Println(f.Name) // fred
+fmt.Println(f.Sentence)        // Record river mind.
+fmt.Println(fStr)              // world
+fmt.Println(f.Number) // 4
+fmt.Println(f.Regex) // cbdfc
+fmt.Println(f.Map) // map[PxLIo:52 lxwnqhqc:846]
+fmt.Println(f.Array) // cbdfc
+fmt.Printf("%+v", f.Bar) // {Name:QFpZ Number:-2882647639396178786 Float:1.7636692e+37}
+fmt.Println(f.Skip) // <nil>
 fmt.Println(f.Created.String()) // 1908-12-07 04:14:25.685339029 +0000 UTC
 
 // Supported formats
@@ -195,28 +196,29 @@ fmt.Println(f.Created.String()) // 1908-12-07 04:14:25.685339029 +0000 UTC
 It is possible to extend a struct by implementing the `Fakeable` interface
 in order to control the generation.
 
-For example, this is useful when it is not possible to modify the struct that you want to fake by adding struct tags to a field but you still need to be able to control the generation process.
+For example, this is useful when it is not possible to modify the struct that you want to fake by adding struct tags to
+a field but you still need to be able to control the generation process.
 
 ```go
 // Custom string that you want to generate your own data for
 type Friend string
 
 func (c *Friend) Fake(f *gofakeit.Faker) (any, error) {
-	// Can call any other faker methods
-	return f.RandomString([]string{"billy", "fred", "susan"}), nil
+// Can call any other faker methods
+return f.RandomString([]string{"billy", "fred", "susan"}), nil
 }
 
 // Custom time that you want to generate your own data for
 type Age time.Time
 
 func (c *Age) Fake(f *gofakeit.Faker) (any, error) {
-	return f.DateRange(time.Now().AddDate(-100, 0, 0), time.Now().AddDate(-18, 0, 0)), nil
+return f.DateRange(time.Now().AddDate(-100, 0, 0), time.Now().AddDate(-18, 0, 0)), nil
 }
 
 // This is the struct that we cannot modify to add struct tags
 type User struct {
-	Name Friend
-	Age *Age
+Name Friend
+Age *Age
 }
 
 var u User
@@ -236,39 +238,39 @@ you need more reference examples you can look at each files lookups.
 ```go
 // Simple
 gofakeit.AddFuncLookup("friendname", gofakeit.Info{
-	Category:    "custom",
-	Description: "Random friend name",
-	Example:     "bill",
-	Output:      "string",
-	Generate: func(f *Faker, m *gofakeit.MapParams, info *gofakeit.Info) (any, error) {
-		return f.RandomString([]string{"bill", "bob", "sally"}), nil
-	},
+Category:    "custom",
+Description: "Random friend name",
+Example:     "bill",
+Output:      "string",
+Generate: func (f *Faker, m *gofakeit.MapParams, info *gofakeit.Info) (any, error) {
+return f.RandomString([]string{"bill", "bob", "sally"}), nil
+},
 })
 
 // With Params
 gofakeit.AddFuncLookup("jumbleword", gofakeit.Info{
-	Category:    "jumbleword",
-	Description: "Take a word and jumble it up",
-	Example:     "loredlowlh",
-	Output:      "string",
-	Params: []gofakeit.Param{
-		{Field: "word", Type: "string", Description: "Word you want to jumble"},
-	},
-	Generate: func(f *Faker, m *gofakeit.MapParams, info *gofakeit.Info) (any, error) {
-		word, err := info.GetString(m, "word")
-		if err != nil {
-			return nil, err
-		}
+Category:    "jumbleword",
+Description: "Take a word and jumble it up",
+Example:     "loredlowlh",
+Output:      "string",
+Params: []gofakeit.Param{
+{Field: "word", Type: "string", Description: "Word you want to jumble"},
+},
+Generate: func (f *Faker, m *gofakeit.MapParams, info *gofakeit.Info) (any, error) {
+word, err := info.GetString(m, "word")
+if err != nil {
+return nil, err
+}
 
-		split := strings.Split(word, "")
-		f.ShuffleStrings(split)
-		return strings.Join(split, ""), nil
-	},
+split := strings.Split(word, "")
+f.ShuffleStrings(split)
+return strings.Join(split, ""), nil
+},
 })
 
 type Foo struct {
-	FriendName string `fake:"{friendname}"`
-	JumbleWord string `fake:"{jumbleword:helloworld}"`
+FriendName string `fake:"{friendname}"`
+JumbleWord string `fake:"{jumbleword:helloworld}"`
 }
 
 var f Foo
@@ -279,20 +281,23 @@ fmt.Printf("%s", f.JumbleWord) // loredlowlh
 
 ## Templates
 
-Generate custom outputs using golang's template engine [https://pkg.go.dev/text/template](https://pkg.go.dev/text/template).
+Generate custom outputs using golang's template
+engine [https://pkg.go.dev/text/template](https://pkg.go.dev/text/template).
 
-We have added all the available functions to the template engine as well as some additional ones that are useful for template building.
+We have added all the available functions to the template engine as well as some additional ones that are useful for
+template building.
 
 Additional Available Functions
+
 ```go
-- ToUpper(s string) string   			// Make string upper case
-- ToLower(s string) string   			// Make string lower case
-- ToString(s any)            			// Convert to string
-- ToDate(s string) time.Time 			// Convert string to date
-- SpliceAny(args ...any) []any 			// Build a slice of anys, used with Weighted
+- ToUpper(s string) string // Make string upper case
+- ToLower(s string) string // Make string lower case
+- ToString(s any) // Convert to string
+- ToDate(s string) time.Time // Convert string to date
+- SpliceAny(args ...any) []any // Build a slice of anys, used with Weighted
 - SpliceString(args ...string) []string // Build a slice of strings, used with Teams and RandomString
-- SpliceUInt(args ...uint) []uint 		// Build a slice of uint, used with Dice and RandomUint
-- SpliceInt(args ...int) []int 			// Build a slice of int, used with RandomInt
+- SpliceUInt(args ...uint) []uint // Build a slice of uint, used with Dice and RandomUint
+- SpliceInt(args ...int) []int // Build a slice of int, used with RandomInt
 ```
 
 <details>
@@ -306,8 +311,8 @@ Additional Available Functions
 - Template(co *TemplateOptions) ([]byte, error)
 - RandomMapKey(mapI any) any
 ```
-</details>
 
+</details>
 
 ### Example Usages
 
@@ -315,8 +320,8 @@ Additional Available Functions
 import "github.com/brianvoe/gofakeit/v7"
 
 func main() {
-	// Accessing the Lines variable from within the template.
-	template := `
+// Accessing the Lines variable from within the template.
+template := `
 	Subject: {{RandomString (SliceString "Greetings" "Hello" "Hi")}}
 
 	Dear {{LastName}},
@@ -332,17 +337,18 @@ func main() {
 	{{$person.Phone}}
 	`
 
-	value, err := gofakeit.Template(template, &TemplateOptions{Data: 5})
+value, err := gofakeit.Template(template, &TemplateOptions{Data: 5})
 
-	if err != nil {
-		fmt.Println(err)
-	}
+if err != nil {
+fmt.Println(err)
+}
 
-	fmt.Println(string(value))
+fmt.Println(string(value))
 }
 ```
 
 Output:
+
 ```text
 Subject: Hello
 
