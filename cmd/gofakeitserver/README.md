@@ -7,7 +7,7 @@ query parameters.
 ### Installation
 
 ```go
-go get -u github.com/brianvoe/gofakeit/v7/cmd/gofakeitserver
+go get -u github.com/inovacc/gofakeit/v7/cmd/gofakeitserver
 ```
 
 ### Example
@@ -16,4 +16,4 @@ go get -u github.com/brianvoe/gofakeit/v7/cmd/gofakeitserver
 gofakeitserver // default port is 8080
 ```
 
-![](https://raw.githubusercontent.com/brianvoe/gofakeit/master/cmd/gofakeitserver/server.gif)
+![](https://raw.githubusercontent.com/inovacc/gofakeit/master/cmd/gofakeitserver/server.gif)

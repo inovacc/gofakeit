@@ -7,7 +7,7 @@ seperation.
 ### Installation
 
 ```go
-go install -v github.com/brianvoe/gofakeit/v7/cmd/gofakeit@latest
+go install -v github.com/inovacc/gofakeit/v7/cmd/gofakeit@latest
 ```
 
 ### Example
@@ -30,4 +30,4 @@ gofakeit list
 gofakeit list [category] [function]
 ```
 
-![](https://raw.githubusercontent.com/brianvoe/gofakeit/master/cmd/gofakeit/cmd.gif)
+![](https://raw.githubusercontent.com/inovacc/gofakeit/master/cmd/gofakeit/cmd.gif)

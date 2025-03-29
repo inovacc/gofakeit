@@ -68,7 +68,7 @@ Performance benchmarks for each RNG are provided to help you choose the right ge
 benchmarks cover various aspects, including speed and randomness quality.
 
 For detailed benchmark results, see
-the [Benchmarks](https://github.com/brianvoe/gofakeit/blob/master/source/BENCHMARKS.md) file.
+the [Benchmarks](https://github.com/inovacc/gofakeit/blob/master/source/BENCHMARKS.md) file.
 
 ## Contributing
 

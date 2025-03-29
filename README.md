@@ -1,12 +1,12 @@
-![Gofakeit](https://raw.githubusercontent.com/brianvoe/gofakeit/master/logo.png)
+![Gofakeit](https://raw.githubusercontent.com/inovacc/gofakeit/master/logo.png)
 
-# Gofakeit [![Go Report Card](https://goreportcard.com/badge/github.com/brianvoe/gofakeit)](https://goreportcard.com/report/github.com/brianvoe/gofakeit) ![Test](https://github.com/brianvoe/gofakeit/workflows/Test/badge.svg?branch=master) [![GoDoc](https://godoc.org/github.com/brianvoe/gofakeit/v7?status.svg)](https://godoc.org/github.com/brianvoe/gofakeit/v7) [![license](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/brianvoe/gofakeit/master/LICENSE.txt)
+# Gofakeit [![Go Report Card](https://goreportcard.com/badge/github.com/inovacc/gofakeit)](https://goreportcard.com/report/github.com/inovacc/gofakeit) ![Test](https://github.com/inovacc/gofakeit/workflows/Test/badge.svg?branch=master) [![GoDoc](https://godoc.org/github.com/inovacc/gofakeit/v7?status.svg)](https://godoc.org/github.com/inovacc/gofakeit/v7) [![license](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/inovacc/gofakeit/master/LICENSE.txt)
 
 Random data generator written in go
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/G2G0R5EJT)
 
-<a href="https://www.buymeacoffee.com/brianvoe" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+<a href="https://www.buymeacoffee.com/inovacc" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 ## Features
 
@@ -16,30 +16,30 @@ Random data generator written in go
 - [Struct Generator](#struct)
 - [Custom Functions](#custom-functions)
 - [Templates](#templates)
-- [Http Server](https://github.com/brianvoe/gofakeit/tree/master/cmd/gofakeitserver)
-- [Command Line Tool](https://github.com/brianvoe/gofakeit/tree/master/cmd/gofakeit)
+- [Http Server](https://github.com/inovacc/gofakeit/tree/master/cmd/gofakeitserver)
+- [Command Line Tool](https://github.com/inovacc/gofakeit/tree/master/cmd/gofakeit)
 - Zero dependencies
-- [Benchmarks](https://github.com/brianvoe/gofakeit/blob/master/BENCHMARKS.md)
-- [Issue](https://github.com/brianvoe/gofakeit/issues)
+- [Benchmarks](https://github.com/inovacc/gofakeit/blob/master/BENCHMARKS.md)
+- [Issue](https://github.com/inovacc/gofakeit/issues)
 
 ## Contributors
 
 Thank you to all our Gofakeit contributors!
 
-<a href="https://github.com/brianvoe/gofakeit/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=brianvoe/gofakeit" />
+<a href="https://github.com/inovacc/gofakeit/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=inovacc/gofakeit" />
 </a>
 
 ## Installation
 
 ```go
-go get github.com/brianvoe/gofakeit/v7
+go get github.com/inovacc/gofakeit/v7
 ```
 
 ## Simple Usage
 
 ```go
-import "github.com/brianvoe/gofakeit/v7"
+import "github.com/inovacc/gofakeit/v7"
 
 gofakeit.Name() // Markus Moen
 gofakeit.Email() // alaynawuckert@kozey.biz
@@ -65,7 +65,7 @@ If you need a reproducible outcome you can set it via the Seed function call. Ev
 this repo sets it for testing purposes.
 
 ```go
-import "github.com/brianvoe/gofakeit/v7"
+import "github.com/inovacc/gofakeit/v7"
 
 gofakeit.Seed(0) // If 0 will use crypto/rand to generate a number
 
@@ -80,12 +80,12 @@ Gofakeit has a few rand sources, by default it uses math/rand/v2 PCG which is a 
 thread locked.
 
 If you want to see other potential sources you can see the sub
-package [Source](https://github.com/brianvoe/gofakeit/tree/master/source) for more information.
+package [Source](https://github.com/inovacc/gofakeit/tree/master/source) for more information.
 
 ```go
 import (
-"github.com/brianvoe/gofakeit/v7"
-"github.com/brianvoe/gofakeit/v7/source"
+"github.com/inovacc/gofakeit/v7"
+"github.com/inovacc/gofakeit/v7/source"
 "math/rand/v2"
 )
 
@@ -122,7 +122,7 @@ If you would like to use the simple function calls but need to use something lik
 crypto/rand you can override the default global with the random source that you want.
 
 ```go
-import "github.com/brianvoe/gofakeit/v7"
+import "github.com/inovacc/gofakeit/v7"
 
 gofakeit.GlobalFaker = gofakeit.New(0)
 ```
@@ -135,7 +135,7 @@ as well as some non-basic like time.Time.
 Struct fields can also use tags to more specifically generate data for that field type.
 
 ```go
-import "github.com/brianvoe/gofakeit/v7"
+import "github.com/inovacc/gofakeit/v7"
 
 // Create structs with random injected data
 type Foo struct {
@@ -317,7 +317,7 @@ Additional Available Functions
 ### Example Usages
 
 ```go
-import "github.com/brianvoe/gofakeit/v7"
+import "github.com/inovacc/gofakeit/v7"
 
 func main() {
 // Accessing the Lines variable from within the template.

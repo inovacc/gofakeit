@@ -1,7 +1,7 @@
 package gofakeit
 
 import (
-	"github.com/brianvoe/gofakeit/v7/data"
+	"github.com/inovacc/gofakeit/v7/data"
 )
 
 // Color will generate a random color string

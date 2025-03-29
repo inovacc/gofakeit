@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/brianvoe/gofakeit/v7"
+	"github.com/inovacc/gofakeit/v7"
 )
 
 func TestList(t *testing.T) {

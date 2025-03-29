@@ -3,7 +3,7 @@ package gofakeit
 import (
 	"strings"
 
-	"github.com/brianvoe/gofakeit/v7/data"
+	"github.com/inovacc/gofakeit/v7/data"
 )
 
 // Word will generate a random word

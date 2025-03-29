@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/brianvoe/gofakeit/v7"
+	"github.com/inovacc/gofakeit/v7"
 )
 
 var (
